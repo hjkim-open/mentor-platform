@@ -115,3 +115,15 @@ Started: 2026-05-11
   - Returning `<>...</>` from a render helper function (React.ReactNode) avoids key conflicts and works cleanly with TypeScript — no need to import React explicitly in TSX files
   - Existing `search` state in MentorGrid can be passed directly as `searchQuery` — no new state needed
 ---
+
+## 2026-05-11 - US-008
+- Implemented Top으로 스크롤 버튼 (scroll-to-top button at bottom-right)
+- Files changed:
+  - src/components/ScrollToTop.tsx (new) - fixed circular button with ChevronUp, scroll listener, fade transition
+  - src/App.tsx - imported and added ScrollToTop after MobileCtaBar
+- **Learnings for future iterations:**
+  - `opacity-0 pointer-events-none` / `opacity-100` with `transition-opacity duration-300` gives clean fade-in/out without removing from DOM
+  - `bottom-20 md:bottom-8` positions button above mobile CTA bar (~80px) on mobile and 32px from bottom on desktop
+  - `window.scrollTo({ top: 0, behavior: 'smooth' })` is the standard smooth-scroll-to-top API — no library needed
+  - `aria-label` is needed on icon-only buttons for accessibility
+---

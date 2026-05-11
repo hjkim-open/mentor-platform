@@ -154,7 +154,7 @@
         "npx tsc --noEmit 통과"
       ],
       "priority": 8,
-      "passes": false,
+      "passes": true,
       "notes": ""
     }
   ]
