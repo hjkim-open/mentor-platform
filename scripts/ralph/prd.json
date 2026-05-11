@@ -1,0 +1,161 @@
+{
+  "project": "MentorConnect",
+  "branchName": "ralph/mentor-platform-polish",
+  "description": "대한민국 창업자를 위한 코칭 멘토 플랫폼 - 멘토 상세 모달, How It Works, FAQ, 스크롤 애니메이션, UX 개선",
+  "techStack": {
+    "framework": "React 18 + TypeScript",
+    "bundler": "Vite",
+    "styling": "Tailwind CSS v3",
+    "icons": "lucide-react",
+    "qualityCheck": "npx tsc --noEmit",
+    "devServer": "http://localhost:5173"
+  },
+  "codebaseNotes": [
+    "Project root: /Users/kimheejeong/Sites/mentor-platform",
+    "Components are in src/components/",
+    "Mentor data (20 mentors) is in src/data/mentors.ts",
+    "Main entry: src/App.tsx",
+    "Dark theme: bg-[#0a0a0f] base, bg-[#0e0e1a] cards",
+    "Brand colors: indigo-600 primary, purple-600 secondary",
+    "Font: Pretendard loaded via index.html CDN link",
+    "Tailwind custom colors: brand.*, gold.* defined in tailwind.config.js",
+    "No routing library - single page, sections via anchor links",
+    "git identity already configured"
+  ],
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "멘토 상세 모달",
+      "description": "창업자가 멘토 카드를 클릭했을 때 전체 프로필을 모달로 볼 수 있어야 한다.",
+      "acceptanceCriteria": [
+        "멘토 카드의 아바타 또는 이름 클릭 시 풀스크린 모달 오픈",
+        "모달에는 이름, 직책, 회사, 전문분야 태그, 전체 bio, 주요성과(achievements), 코칭가능분야(availableFor), 경력년수, 멘티수 표시",
+        "모달 우상단 X 버튼 또는 배경 클릭으로 닫기",
+        "ESC 키로도 모달 닫기",
+        "모달 열릴 때 body scroll lock",
+        "모달 하단에 '매칭 신청하기' 버튼 (href=#contact)",
+        "모바일에서도 정상 작동",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "How It Works 섹션",
+      "description": "창업자가 멘토 매칭 프로세스를 한눈에 파악할 수 있는 단계별 설명 섹션을 추가한다.",
+      "acceptanceCriteria": [
+        "Hero 섹션과 MentorGrid 섹션 사이에 'How It Works' 섹션 삽입",
+        "3단계 프로세스 표시: 1) 신청서 제출 → 2) 멘토 매칭 → 3) 첫 세션 시작",
+        "각 단계에 아이콘(lucide-react), 단계 번호, 제목, 설명 포함",
+        "단계 사이 연결선 또는 화살표 (데스크탑)",
+        "다크 테마 디자인 일관성 유지 (bg-[#080810])",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "숫자 카운터 애니메이션",
+      "description": "Hero와 Stats 섹션의 숫자 지표가 스크롤로 진입 시 0부터 카운트업 되는 애니메이션을 추가한다.",
+      "acceptanceCriteria": [
+        "IntersectionObserver 사용하여 뷰포트 진입 시 카운터 시작",
+        "Stats 섹션의 모든 숫자 지표에 카운트업 애니메이션 적용 (500+, $2.3B, 3.2x, 94%, 20명, 4.9)",
+        "숫자 + 단위(+, B, x, %, 명, ★) 형식 유지",
+        "애니메이션 duration: 1.5초, easeOut 커브",
+        "한 번만 실행 (재진입 시 재실행 안 함)",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "FAQ 아코디언 섹션",
+      "description": "창업자의 주요 질문에 답하는 FAQ 섹션을 Contact 섹션 바로 위에 추가한다.",
+      "acceptanceCriteria": [
+        "Contact 섹션 바로 위에 FAQ 섹션 삽입 (id='faq')",
+        "최소 8개 FAQ 항목 (한국어, 창업자 관련 질문)",
+        "클릭으로 열고 닫히는 아코디언 UI",
+        "한 번에 하나만 열리도록 (accordion exclusive)",
+        "열릴 때 chevron 아이콘 회전 애니메이션",
+        "Navbar에 'FAQ' 링크 추가 (href=#faq)",
+        "다크 테마 디자인 일관성 유지",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "스크롤 진입 애니메이션",
+      "description": "각 섹션과 카드가 스크롤로 뷰포트에 진입할 때 fade-in + slide-up 애니메이션을 적용한다.",
+      "acceptanceCriteria": [
+        "IntersectionObserver 기반 커스텀 훅 useScrollAnimation 구현 (src/hooks/useScrollAnimation.ts)",
+        "MentorGrid의 카드들에 stagger 애니메이션 적용 (각 카드 50ms 지연)",
+        "Program, Stats, FAQ, Contact 섹션 헤더에 fade-in 애니메이션",
+        "애니메이션은 once 옵션 (한 번만 실행)",
+        "prefers-reduced-motion 미디어 쿼리 대응 (애니메이션 비활성화)",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "모바일 하단 고정 CTA 바",
+      "description": "모바일 사용자를 위한 하단 고정 '멘토 매칭 신청' CTA 버튼을 추가한다.",
+      "acceptanceCriteria": [
+        "모바일(md 미만)에서만 표시되는 하단 고정 바",
+        "'멘토 매칭 신청하기' 버튼 (href=#contact)",
+        "스크롤 위치가 Hero 섹션 아래로 내려갔을 때만 표시 (처음엔 숨김)",
+        "Contact 섹션이 뷰포트에 있을 때는 숨김 처리",
+        "버튼은 indigo-600 배경, 전체 너비",
+        "하단 safe-area-inset 고려 (pb-safe 또는 padding-bottom env(safe-area-inset-bottom))",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "멘토 검색 텍스트 하이라이트",
+      "description": "검색어 입력 시 멘토 카드에서 일치하는 텍스트를 시각적으로 하이라이트한다.",
+      "acceptanceCriteria": [
+        "MentorCard에 searchQuery prop 추가 (optional string)",
+        "멘토 이름, 직책, 전문분야 태그에서 검색어 매칭 부분을 <mark> 또는 span으로 하이라이트",
+        "하이라이트 스타일: 노란색(yellow-400) 배경, 검정 텍스트, rounded-sm",
+        "대소문자 구분 없음 (한글 포함)",
+        "빈 검색어일 때는 하이라이트 없음",
+        "MentorGrid에서 searchQuery를 MentorCard로 전달",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Top으로 스크롤 버튼",
+      "description": "페이지를 일정 이상 스크롤했을 때 우하단에 '맨 위로' 버튼이 나타난다.",
+      "acceptanceCriteria": [
+        "스크롤 위치 400px 이상일 때 우하단에 버튼 표시",
+        "부드러운 fade-in/out 트랜지션",
+        "클릭 시 smooth scroll로 최상단 이동",
+        "버튼 디자인: 원형, indigo-600 배경, ChevronUp 아이콘",
+        "모바일에서는 하단 CTA 바 위에 위치하도록 bottom 조정",
+        "npx tsc --noEmit 통과"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}

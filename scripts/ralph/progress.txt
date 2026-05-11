@@ -1,0 +1,35 @@
+# Ralph Progress Log
+Started: 2026-05-11
+---
+
+## Codebase Patterns
+- Project root: /Users/kimheejeong/Sites/mentor-platform
+- Quality check: run `npx tsc --noEmit` from project root
+- Stack: React 18 + TypeScript + Vite + Tailwind CSS v3 + lucide-react
+- Dark theme base colors: bg-[#0a0a0f] (page bg), bg-[#080810] (alt sections), bg-[#0e0e1a] (cards)
+- Primary brand: indigo-600 (#4f46e5), secondary: purple-600
+- All text is Korean (한국어) - keep UI text in Korean
+- Components live in src/components/, data in src/data/
+- No routing - single page app, sections linked by anchor href="#sectionId"
+- Mentor data: src/data/mentors.ts exports `mentors` array (20 items) and `categories` array
+- Mentor type has: id, name, title, company, expertise[], bio, achievements[], availableFor[], avatarColor, initials, yearsExp, menteeCount, category
+- Tailwind content paths configured for src/**/*.{ts,tsx}
+- git identity: name=kimheejeong, email=hjkim.open@gmail.com
+- git is initialized on branch `main`
+- Dev server runs on http://localhost:5173 (may already be running)
+- MentorModal: fixed inset-0 overlay with backdrop-blur, stopPropagation on panel click, ESC+body scroll lock via useEffect cleanup
+- MentorCard receives `onOpenModal: () => void` prop; avatar is a `<button>`, name is a `<button>` for modal trigger
+- MentorGrid owns `selectedMentor: Mentor | null` state; renders MentorModal before the section tag inside a Fragment
+
+## 2026-05-11 - US-001
+- Implemented 멘토 상세 모달 (MentorModal component)
+- Files changed:
+  - src/components/MentorModal.tsx (new) - full-screen modal with overlay, ESC key, body scroll lock, mentor details
+  - src/components/MentorCard.tsx - added onOpenModal prop, made avatar and name into clickable buttons
+  - src/components/MentorGrid.tsx - added selectedMentor state, imported Mentor type and MentorModal, wrapped return in Fragment
+- **Learnings for future iterations:**
+  - ESC key handler and body scroll lock both need useEffect cleanup (return function) to avoid leaks
+  - stopPropagation on modal panel prevents backdrop click from closing when clicking inside
+  - When converting div to button for interactivity, use `text-left` to preserve text alignment
+  - Import `type { Mentor }` separately from `{ mentors, categories }` when you need the type in a new file
+---
