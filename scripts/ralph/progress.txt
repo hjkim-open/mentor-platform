@@ -103,3 +103,15 @@ Started: 2026-05-11
   - Hero section has `min-h-screen`; threshold of `window.innerHeight * 0.8` reliably detects "past hero"
   - `md:hidden` keeps the bar desktop-invisible without JS
 ---
+
+## 2026-05-11 - US-007
+- Implemented 멘토 검색 텍스트 하이라이트 (search text highlighting in mentor cards)
+- Files changed:
+  - src/components/MentorCard.tsx - added `searchQuery?: string` prop and `highlightText` helper function; applied to name, title, and expertise tags
+  - src/components/MentorGrid.tsx - passed `searchQuery={search}` to each MentorCard
+- **Learnings for future iterations:**
+  - `text.split(new RegExp(`(${escaped})`, 'gi'))` with a capturing group includes matched substrings in the result array at odd indices (i % 2 === 1), making it easy to identify and wrap matches
+  - Escape regex special characters with `.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')` before building dynamic RegExp
+  - Returning `<>...</>` from a render helper function (React.ReactNode) avoids key conflicts and works cleanly with TypeScript — no need to import React explicitly in TSX files
+  - Existing `search` state in MentorGrid can be passed directly as `searchQuery` — no new state needed
+---
