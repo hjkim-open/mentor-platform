@@ -4,6 +4,7 @@ Started: 2026-05-11
 
 ## Codebase Patterns
 - Project root: /Users/kimheejeong/Sites/mentor-platform
+- CountUp component (src/components/CountUp.tsx) parses stat strings like "500+", "$2.3B" into prefix/num/suffix and animates with IntersectionObserver + requestAnimationFrame
 - Quality check: run `npx tsc --noEmit` from project root
 - Stack: React 18 + TypeScript + Vite + Tailwind CSS v3 + lucide-react
 - Dark theme base colors: bg-[#0a0a0f] (page bg), bg-[#080810] (alt sections), bg-[#0e0e1a] (cards)
@@ -32,6 +33,18 @@ Started: 2026-05-11
   - stopPropagation on modal panel prevents backdrop click from closing when clicking inside
   - When converting div to button for interactivity, use `text-left` to preserve text alignment
   - Import `type { Mentor }` separately from `{ mentors, categories }` when you need the type in a new file
+---
+
+## 2026-05-11 - US-003
+- Implemented 숫자 카운터 애니메이션 (Count-up animation for Stats section)
+- Files changed:
+  - src/components/CountUp.tsx (new) - parses stat value strings, uses IntersectionObserver to trigger once on viewport entry, animates with requestAnimationFrame + cubic easeOut over 1500ms
+  - src/components/Stats.tsx - imported CountUp, replaced raw {stat.value} with <CountUp value={stat.value} />
+- **Learnings for future iterations:**
+  - Regex `/^([^0-9]*)([0-9]+(?:\.[0-9]+)?)(.*)$/` cleanly separates prefix/number/suffix from strings like "$2.3B", "500+", "4.9★"
+  - `observer.disconnect()` inside the callback (after animation starts) ensures truly once-only behavior
+  - Set `setCurrent(num)` at the end of the tick to guarantee final value is exact (avoids floating point drift)
+  - The `started` ref guards against double-trigger if IntersectionObserver fires multiple times before disconnect
 ---
 
 ## 2026-05-11 - US-002
