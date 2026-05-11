@@ -14,7 +14,7 @@ export default function ScrollToTop() {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="맨 위로"
-      className={`fixed right-5 z-50 flex items-center justify-center w-11 h-11 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg transition-opacity duration-300 bottom-20 md:bottom-8 ${
+      className={`fixed right-5 z-50 flex items-center justify-center w-11 h-11 rounded-full bg-green-500 hover:bg-indigo-500 text-white shadow-lg transition-opacity duration-300 bottom-20 md:bottom-8 ${
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >

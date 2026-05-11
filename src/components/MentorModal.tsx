@@ -26,7 +26,7 @@ export default function MentorModal({ mentor, onClose }: Props) {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-[#0e0e1a] border border-white/10 rounded-2xl shadow-2xl"
+        className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -49,9 +49,9 @@ export default function MentorModal({ mentor, onClose }: Props) {
             </div>
             <div className="flex-1 min-w-0 pt-1">
               <h2 className="text-white font-bold text-xl mb-1">{mentor.name}</h2>
-              <p className="text-indigo-400 text-sm font-medium">{mentor.title}</p>
+              <p className="text-green-400 text-sm font-medium">{mentor.title}</p>
               <p className="text-gray-500 text-sm">{mentor.company}</p>
-              <span className="inline-block mt-2 px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400 text-xs font-medium">
+              <span className="inline-block mt-2 px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-green-400 text-xs font-medium">
                 {mentor.category}
               </span>
             </div>
@@ -60,11 +60,11 @@ export default function MentorModal({ mentor, onClose }: Props) {
           {/* Stats */}
           <div className="flex items-center gap-6 mb-6 p-4 rounded-xl bg-white/4 border border-white/8">
             <div className="flex items-center gap-2 text-gray-400">
-              <Clock size={15} className="text-indigo-400" />
+              <Clock size={15} className="text-green-400" />
               <span className="text-sm">{mentor.yearsExp}년 경력</span>
             </div>
             <div className="flex items-center gap-2 text-gray-400">
-              <Users size={15} className="text-indigo-400" />
+              <Users size={15} className="text-green-400" />
               <span className="text-sm">멘티 {mentor.menteeCount}명</span>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function MentorModal({ mentor, onClose }: Props) {
           <a
             href="#contact"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/30"
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-green-500 hover:bg-indigo-500 text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-indigo-500/30"
           >
             매칭 신청하기
             <ExternalLink size={14} />

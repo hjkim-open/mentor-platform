@@ -34,7 +34,7 @@ export default function Contact() {
     <section id="contact" className="py-24 bg-[#080810]">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-5">
             멘토 매칭 신청
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
@@ -46,18 +46,18 @@ export default function Contact() {
         </div>
 
         {submitted ? (
-          <div className="text-center py-16 bg-[#0e0e1a] rounded-2xl border border-white/8">
+          <div className="text-center py-16 bg-[#1a1a1a] rounded-2xl border border-white/8">
             <CheckCircle size={56} className="text-green-400 mx-auto mb-5" />
             <h3 className="text-white text-2xl font-bold mb-3">신청이 완료되었습니다!</h3>
             <p className="text-gray-400">
               영업일 기준 24시간 내에{' '}
-              <span className="text-indigo-400 font-medium">{form.email}</span>로 연락드리겠습니다.
+              <span className="text-green-400 font-medium">{form.email}</span>로 연락드리겠습니다.
             </p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="bg-[#0e0e1a] border border-white/8 rounded-2xl p-8 space-y-6"
+            className="bg-[#1a1a1a] border border-white/8 rounded-2xl p-8 space-y-6"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
@@ -68,7 +68,7 @@ export default function Contact() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="홍길동"
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-green-500/50 transition-colors"
                 />
               </div>
               <div>
@@ -79,7 +79,7 @@ export default function Contact() {
                   value={form.company}
                   onChange={(e) => setForm({ ...form, company: e.target.value })}
                   placeholder="(주) 스타트업"
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-green-500/50 transition-colors"
                 />
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Contact() {
                     onClick={() => setForm({ ...form, stage: s })}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       form.stage === s
-                        ? 'bg-indigo-600 text-white border border-indigo-500'
+                        ? 'bg-green-500 text-white border border-green-500'
                         : 'bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-white/25'
                     }`}
                   >
@@ -119,7 +119,7 @@ export default function Contact() {
                     }}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       form.goal.includes(g)
-                        ? 'bg-indigo-600 text-white border border-indigo-500'
+                        ? 'bg-green-500 text-white border border-green-500'
                         : 'bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-white/25'
                     }`}
                   >
@@ -137,13 +137,13 @@ export default function Contact() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="hello@startup.kr"
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-green-500/50 transition-colors"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-base transition-all duration-200 shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-green-500 hover:bg-indigo-500 text-white font-semibold text-base transition-all duration-200 shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
             >
               <Send size={18} />
               매칭 신청하기

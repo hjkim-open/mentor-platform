@@ -52,10 +52,10 @@ export default function FAQ() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="faq" className="py-24 bg-[#0a0a0f]">
+    <section id="faq" className="py-24 bg-[#141414]">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <div ref={ref} className={`text-center mb-14 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-5">
             자주 묻는 질문
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
@@ -70,7 +70,7 @@ export default function FAQ() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="bg-[#0e0e1a] border border-white/8 rounded-xl overflow-hidden"
+              className="bg-[#1a1a1a] border border-white/8 rounded-xl overflow-hidden"
             >
               <button
                 onClick={() => toggle(i)}
@@ -81,7 +81,7 @@ export default function FAQ() {
                 </span>
                 <ChevronDown
                   size={20}
-                  className={`text-indigo-400 flex-shrink-0 transition-transform duration-300 ${
+                  className={`text-green-400 flex-shrink-0 transition-transform duration-300 ${
                     openIndex === i ? 'rotate-180' : ''
                   }`}
                 />
