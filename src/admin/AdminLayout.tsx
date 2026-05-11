@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, LogOut, ExternalLink, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Users, LogOut, ExternalLink, Menu } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = [
