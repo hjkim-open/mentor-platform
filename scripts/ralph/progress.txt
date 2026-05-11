@@ -47,6 +47,19 @@ Started: 2026-05-11
   - The `started` ref guards against double-trigger if IntersectionObserver fires multiple times before disconnect
 ---
 
+## 2026-05-11 - US-004
+- Implemented FAQ 아코디언 섹션 (8 Korean FAQ items for startup founders)
+- Files changed:
+  - src/components/FAQ.tsx (new) - accordion FAQ with exclusive open behavior, ChevronDown rotation, dark theme
+  - src/App.tsx - imported and inserted FAQ between Stats and Contact
+  - src/components/Navbar.tsx - added FAQ link (href=#faq) to navLinks array
+- **Learnings for future iterations:**
+  - Accordion exclusive behavior uses `openIndex === i ? null : i` toggle pattern with a single `openIndex: number | null` state
+  - max-h-0 / max-h-96 with `transition-all duration-300` gives smooth height animation without JS measurement
+  - ChevronDown rotation: `rotate-180` class toggled via conditional className string
+  - FAQ section uses bg-[#0a0a0f] (same as page bg) to alternate with Contact's bg-[#080810]
+---
+
 ## 2026-05-11 - US-002
 - Implemented How It Works 섹션 between Hero and MentorGrid
 - Files changed:
