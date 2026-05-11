@@ -1,3 +1,5 @@
+import CountUp from './CountUp';
+
 const stats = [
   { value: '500+', label: '누적 멘티 창업자', sub: '국내 각 분야 스타트업' },
   { value: '$2.3B', label: '멘티 기업 누적 투자유치', sub: '시드 ~ Series C' },
@@ -52,7 +54,7 @@ export default function Stats() {
               className="p-5 rounded-2xl bg-[#0e0e1a] border border-white/8 hover:border-indigo-500/30 transition-all duration-300 text-center"
             >
               <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-1">
-                {stat.value}
+                <CountUp value={stat.value} />
               </div>
               <div className="text-white text-sm font-semibold mb-1">{stat.label}</div>
               <div className="text-gray-600 text-xs">{stat.sub}</div>
