@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center shadow-lg">
               <span className="text-white font-bold font-syne text-sm">M</span>
             </div>
-            <span className="text-white font-bold font-syne text-lg">MENTORS</span>
+            <span className="text-white font-bold font-syne text-lg">KVMCC 코칭멘토</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">

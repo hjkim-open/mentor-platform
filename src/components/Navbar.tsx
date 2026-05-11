@@ -29,7 +29,7 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center shadow-lg glow-green">
               <span className="text-white font-bold font-syne text-sm">M</span>
             </div>
-            <span className="text-white font-extrabold text-[17px] tracking-[-0.03em]">MENTORS</span>
+            <span className="text-white font-extrabold text-[17px] tracking-[-0.03em]">KVMCC 코칭멘토</span>
           </a>
 
           {/* Desktop nav */}
