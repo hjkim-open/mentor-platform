@@ -7,9 +7,29 @@ interface Props {
   mentor: Mentor;
   onOpenModal: () => void;
   delay?: number;
+  searchQuery?: string;
 }
 
-export default function MentorCard({ mentor, onOpenModal, delay = 0 }: Props) {
+function highlightText(text: string, query: string): React.ReactNode {
+  if (!query) return text;
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'));
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <span key={i} className="bg-yellow-400 text-black rounded-sm">
+            {part}
+          </span>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+}
+
+export default function MentorCard({ mentor, onOpenModal, delay = 0, searchQuery = '' }: Props) {
   const [expanded, setExpanded] = useState(false);
   const { ref, isVisible } = useScrollAnimation();
 
@@ -39,13 +59,13 @@ export default function MentorCard({ mentor, onOpenModal, delay = 0 }: Props) {
                 onClick={onOpenModal}
                 className="text-white font-bold text-lg leading-tight hover:text-indigo-300 transition-colors text-left"
               >
-                {mentor.name}
+                {highlightText(mentor.name, searchQuery)}
               </button>
               <span className="flex-shrink-0 px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400 text-xs font-medium">
                 {mentor.category}
               </span>
             </div>
-            <p className="text-indigo-400 text-sm font-medium truncate">{mentor.title}</p>
+            <p className="text-indigo-400 text-sm font-medium truncate">{highlightText(mentor.title, searchQuery)}</p>
             <p className="text-gray-500 text-xs mt-0.5 truncate">{mentor.company}</p>
           </div>
         </div>
@@ -57,7 +77,7 @@ export default function MentorCard({ mentor, onOpenModal, delay = 0 }: Props) {
               key={tag}
               className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/8 text-gray-400 text-xs font-medium"
             >
-              {tag}
+              {highlightText(tag, searchQuery)}
             </span>
           ))}
         </div>

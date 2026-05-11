@@ -86,7 +86,7 @@ export default function MentorGrid() {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filtered.map((mentor, index) => (
-              <MentorCard key={mentor.id} mentor={mentor} onOpenModal={() => setSelectedMentor(mentor)} delay={index * 50} />
+              <MentorCard key={mentor.id} mentor={mentor} onOpenModal={() => setSelectedMentor(mentor)} delay={index * 50} searchQuery={search} />
             ))}
           </div>
         ) : (
