@@ -5,6 +5,7 @@ import HowItWorks from './components/HowItWorks';
 import MentorGrid from './components/MentorGrid';
 import Program from './components/Program';
 import Stats from './components/Stats';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -17,6 +18,7 @@ function App() {
       <MentorGrid />
       <Program />
       <Stats />
+      <FAQ />
       <Contact />
       <Footer />
     </div>

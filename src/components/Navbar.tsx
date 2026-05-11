@@ -15,6 +15,7 @@ export default function Navbar() {
     { label: '멘토 소개', href: '#mentors' },
     { label: '프로그램', href: '#program' },
     { label: '성과', href: '#stats' },
+    { label: 'FAQ', href: '#faq' },
     { label: '문의하기', href: '#contact' },
   ];
 
