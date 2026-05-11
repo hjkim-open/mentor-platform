@@ -54,8 +54,8 @@ export default function Program() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-xs font-bold mb-5 tracking-wider uppercase">
             코칭 프로그램
           </div>
-          <h2 className="font-display text-4xl lg:text-5xl text-white mb-4">
-            단계별 <span className="text-gradient-gold">맞춤 프로그램</span>
+          <h2 className="text-[40px] lg:text-[52px] font-extrabold tracking-[-0.04em] leading-[1.1] text-white mb-4">
+            단계별 <span className="text-green-400">맞춤 프로그램</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             스타트업의 성장 단계에 맞는 프로그램으로 시작하세요.

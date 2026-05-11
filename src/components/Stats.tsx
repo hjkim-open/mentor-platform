@@ -44,8 +44,8 @@ export default function Stats() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-xs font-bold mb-5 tracking-wider uppercase">
             실증된 성과
           </div>
-          <h2 className="font-display text-4xl lg:text-5xl text-white mb-4">
-            숫자로 <span className="text-gradient-gold">증명하는 성과</span>
+          <h2 className="text-[40px] lg:text-[52px] font-extrabold tracking-[-0.04em] leading-[1.1] text-white mb-4">
+            숫자로 <span className="text-green-400">증명하는 성과</span>
           </h2>
         </div>
 
@@ -53,7 +53,7 @@ export default function Stats() {
           {stats.map((stat) => (
             <div key={stat.label}
               className="p-5 rounded-2xl bg-[#141414] border border-white/8 hover:border-green-500/25 transition-all duration-300 text-center group">
-              <div className="text-3xl lg:text-4xl font-bold text-gradient-gold mb-1 group-hover:scale-110 transition-transform origin-bottom">
+              <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-1 group-hover:scale-110 transition-transform origin-bottom">
                 <CountUp value={stat.value} />
               </div>
               <div className="text-white text-sm font-semibold mb-1">{stat.label}</div>
@@ -63,7 +63,7 @@ export default function Stats() {
         </div>
 
         <div className="text-center mb-10">
-          <h3 className="font-display text-3xl text-white">멘티 후기</h3>
+          <h3 className="text-[32px] font-extrabold tracking-[-0.03em] text-white">멘티 후기</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {testimonials.map((t) => (

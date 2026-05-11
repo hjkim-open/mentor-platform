@@ -32,8 +32,8 @@ export default function HowItWorks() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold mb-5 tracking-wider uppercase">
             프로세스
           </div>
-          <h2 className="font-display text-4xl lg:text-5xl text-white mb-4">
-            3단계로 <span className="text-gradient-gold">멘토를 만나세요</span>
+          <h2 className="text-[40px] lg:text-[52px] font-extrabold tracking-[-0.04em] leading-[1.1] text-white mb-4">
+            3단계로 <span className="text-green-400">멘토를 만나세요</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             복잡한 과정 없이 48시간 안에 최적의 멘토와 연결됩니다

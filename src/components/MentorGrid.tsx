@@ -38,8 +38,8 @@ export default function MentorGrid() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold mb-5 tracking-wider uppercase">
               20명의 검증된 멘토
             </div>
-            <h2 className="font-display text-4xl lg:text-5xl text-white mb-4 leading-tight">
-              당신의 멘토를 <span className="text-gradient-gold">직접 선택</span>하세요
+            <h2 className="text-[40px] lg:text-[52px] font-extrabold tracking-[-0.04em] leading-[1.1] text-white mb-4">
+              당신의 멘토를 <span className="text-green-400">직접 선택</span>하세요
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               각 분야 최고의 전문가들이 1:1 코칭부터 네트워크 연결까지 실질적인 도움을 드립니다.
