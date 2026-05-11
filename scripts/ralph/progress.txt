@@ -8,6 +8,9 @@ Started: 2026-05-11
 - Quality check: run `npx tsc --noEmit` from project root
 - Stack: React 18 + TypeScript + Vite + Tailwind CSS v3 + lucide-react
 - Dark theme base colors: bg-[#0a0a0f] (page bg), bg-[#080810] (alt sections), bg-[#0e0e1a] (cards)
+- useScrollAnimation hook (src/hooks/useScrollAnimation.ts): returns {ref, isVisible}. Initializes isVisible=true for prefers-reduced-motion. Observer disconnects after first trigger (once-only). Apply `animate-slide-up` when visible, `opacity-0` when not.
+- tailwind.config.js has `animate-slide-up` (keyframe: opacity 0→1, translateY 24px→0, 0.6s ease-out forwards) and `animate-fade-in` already defined
+- For stagger: pass `animationDelay` via inline style (CSS animation-delay); does NOT affect CSS transitions (hover effects unaffected)
 - Primary brand: indigo-600 (#4f46e5), secondary: purple-600
 - All text is Korean (한국어) - keep UI text in Korean
 - Components live in src/components/, data in src/data/
@@ -69,4 +72,21 @@ Started: 2026-05-11
   - Section bg-[#080810] alternates with bg-[#0a0a0f] for visual rhythm between sections
   - Arrow connectors on desktop use `absolute right-0 translate-x-1/2` to center between adjacent step blocks
   - lucide-react icons used: FileText (신청서), UserCheck (매칭), Video (세션), ArrowRight (connector + CTA)
+---
+
+## 2026-05-11 - US-005
+- Implemented 스크롤 진입 애니메이션 (scroll entry fade-in + slide-up animation)
+- Files changed:
+  - src/hooks/useScrollAnimation.ts (new) - custom hook with IntersectionObserver, once-only, prefers-reduced-motion aware
+  - src/components/MentorCard.tsx - added delay prop, uses hook, animates with animate-slide-up + animationDelay
+  - src/components/MentorGrid.tsx - passes delay={index * 50} for stagger
+  - src/components/Program.tsx - section header animated
+  - src/components/Stats.tsx - section header animated
+  - src/components/FAQ.tsx - section header animated
+  - src/components/Contact.tsx - section header animated
+- **Learnings for future iterations:**
+  - tailwind.config.js already had animate-slide-up defined (opacity 0→1, translateY 24px→0, forwards fill)
+  - CSS animation-delay (inline style animationDelay) only applies to CSS animations, not CSS transitions - hover effects are unaffected
+  - Initialize isVisible via useState lazy initializer to avoid flash for prefers-reduced-motion users
+  - Pattern: className={isVisible ? 'animate-slide-up' : 'opacity-0'} for clean toggle
 ---
