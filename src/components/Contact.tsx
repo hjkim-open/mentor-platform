@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
   const [form, setForm] = useState({
     name: '',
     company: '',
@@ -31,7 +33,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-[#080810]">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-5">
             멘토 매칭 신청
           </div>

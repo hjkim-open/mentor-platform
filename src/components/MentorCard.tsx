@@ -1,17 +1,24 @@
 import { useState } from 'react';
 import { Award, Users, Clock, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import type { Mentor } from '../data/mentors';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface Props {
   mentor: Mentor;
   onOpenModal: () => void;
+  delay?: number;
 }
 
-export default function MentorCard({ mentor, onOpenModal }: Props) {
+export default function MentorCard({ mentor, onOpenModal, delay = 0 }: Props) {
   const [expanded, setExpanded] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <div className="group relative bg-[#0e0e1a] border border-white/8 rounded-2xl hover:border-indigo-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1 flex flex-col">
+    <div
+      ref={ref}
+      style={{ animationDelay: `${delay}ms` }}
+      className={`group relative bg-[#0e0e1a] border border-white/8 rounded-2xl hover:border-indigo-500/40 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-1 flex flex-col ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
+    >
       {/* Top accent line */}
       <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${mentor.avatarColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const faqs = [
   {
@@ -46,13 +47,14 @@ const faqs = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { ref, isVisible } = useScrollAnimation();
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <section id="faq" className="py-24 bg-[#0a0a0f]">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <div ref={ref} className={`text-center mb-14 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-5">
             자주 묻는 질문
           </div>

@@ -1,4 +1,5 @@
 import CountUp from './CountUp';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const stats = [
   { value: '500+', label: '누적 멘티 창업자', sub: '국내 각 분야 스타트업' },
@@ -34,11 +35,13 @@ const testimonials = [
 ];
 
 export default function Stats() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="stats" className="py-24 bg-[#0a0a0f]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Stats grid */}
-        <div className="text-center mb-20">
+        <div ref={ref} className={`text-center mb-20 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/20 text-yellow-400 text-sm font-medium mb-5">
             실증된 성과
           </div>
