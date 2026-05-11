@@ -1,11 +1,13 @@
 import { useState, useMemo } from 'react';
 import { Search } from 'lucide-react';
-import { mentors, categories } from '../data/mentors';
+import { categories } from '../data/mentors';
 import type { Mentor } from '../data/mentors';
 import MentorCard from './MentorCard';
 import MentorModal from './MentorModal';
+import { useMentors } from '../contexts/MentorContext';
 
 export default function MentorGrid() {
+  const { mentors } = useMentors();
   const [activeCategory, setActiveCategory] = useState('전체');
   const [search, setSearch] = useState('');
   const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null);
