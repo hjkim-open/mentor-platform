@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MobileCtaBar from './components/MobileCtaBar';
 import ScrollToTop from './components/ScrollToTop';
+import ChatWidget from './components/ChatWidget';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Footer />
       <MobileCtaBar />
       <ScrollToTop />
+      <ChatWidget />
     </div>
   );
 }
