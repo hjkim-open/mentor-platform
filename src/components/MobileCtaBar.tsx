@@ -46,7 +46,7 @@ export default function MobileCtaBar() {
         href="#contact"
         className="block w-full bg-green-500 hover:bg-indigo-500 text-white text-center font-semibold text-base py-4 transition-colors"
       >
-        멘토 매칭 신청하기
+        코칭멘토 매칭 신청하기
       </a>
     </div>
   );

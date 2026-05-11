@@ -5,21 +5,21 @@ const steps = [
     number: '01',
     icon: FileText,
     title: '신청서 제출',
-    description: '창업 단계, 목표, 원하는 멘토링 분야를 간단히 작성해 신청서를 제출하세요.',
+    description: '창업 단계, 목표, 원하는 코칭멘토링 분야를 간단히 작성해 신청서를 제출하세요.',
     color: 'bg-orange-500',
   },
   {
     number: '02',
     icon: UserCheck,
-    title: '멘토 매칭',
-    description: '전문 큐레이터가 신청서를 검토하고 최적의 멘토를 48시간 내에 연결해 드립니다.',
+    title: '코칭멘토 매칭',
+    description: '전문 큐레이터가 신청서를 검토하고 최적의 코칭멘토를 48시간 내에 연결해 드립니다.',
     color: 'bg-yellow-400',
   },
   {
     number: '03',
     icon: Video,
     title: '첫 세션 시작',
-    description: '멘토와 일정을 조율하고 온라인으로 첫 코칭 세션을 시작하세요.',
+    description: '코칭멘토와 일정을 조율하고 온라인으로 첫 코칭 세션을 시작하세요.',
     color: 'bg-green-500',
   },
 ];
@@ -33,10 +33,10 @@ export default function HowItWorks() {
             프로세스
           </div>
           <h2 className="text-[40px] lg:text-[52px] font-extrabold tracking-[-0.04em] leading-[1.1] text-white mb-4">
-            3단계로 <span className="text-green-400">멘토를 만나세요</span>
+            3단계로 <span className="text-green-400">코칭멘토를 만나세요</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            복잡한 과정 없이 48시간 안에 최적의 멘토와 연결됩니다
+            복잡한 과정 없이 48시간 안에 최적의 코칭멘토와 연결됩니다
           </p>
         </div>
 

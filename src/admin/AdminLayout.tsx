@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const navItems = [
   { to: '/admin', icon: LayoutDashboard, label: '대시보드', end: true },
-  { to: '/admin/mentors', icon: Users, label: '멘토 관리', end: false },
+  { to: '/admin/mentors', icon: Users, label: '코칭멘토 관리', end: false },
 ];
 
 export default function AdminLayout() {

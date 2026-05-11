@@ -35,18 +35,18 @@ export default function Hero() {
             {/* 토스식 label chip */}
             <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 text-green-400 text-xs font-bold mb-7 tracking-tight">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              TOP 20 코칭 멘토
+              TOP 20 코칭멘토
             </div>
 
             {/* 토스 스타일 헤딩: 두껍고 타이트한 트래킹, 무조건 sans */}
             <h1 className="text-[52px] lg:text-[64px] xl:text-[72px] font-extrabold tracking-[-0.04em] leading-[1.1] text-white mb-5">
-              올바른 멘토와<br />
+              올바른 코칭멘토와<br />
               <span className="text-green-400">연결하세요.</span>
             </h1>
 
             <p className="text-[17px] text-gray-400 leading-[1.7] mb-10 max-w-[420px] tracking-[-0.01em]">
               유니콘 창업자, 글로벌 VC, 시리얼 엔트레프레너까지.
-              당신의 스타트업 여정에 꼭 맞는 멘토를 찾아드립니다.
+              당신의 스타트업 여정에 꼭 맞는 코칭멘토를 찾아드립니다.
             </p>
 
             {/* 토스 스타일 CTA + 검색 */}
@@ -56,7 +56,7 @@ export default function Hero() {
                 type="submit"
                 className="flex-shrink-0 px-6 py-3.5 rounded-2xl bg-green-500 hover:bg-green-400 active:bg-green-600 text-white font-bold text-[15px] tracking-[-0.02em] transition-colors"
               >
-                멘토 찾기
+                코칭멘토 찾기
               </button>
               <div className="relative flex-1">
                 <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-600" />
@@ -76,7 +76,7 @@ export default function Hero() {
                 <Play size={14} className="text-yellow-400 ml-0.5" fill="currentColor" />
               </div>
               <div className="text-left">
-                <p className="text-gray-600 text-xs tracking-tight">멘토링 프로세스</p>
+                <p className="text-gray-600 text-xs tracking-tight">코칭멘토링 프로세스</p>
                 <p className="text-white text-sm font-bold tracking-[-0.02em]">영상으로 확인하기</p>
               </div>
             </button>

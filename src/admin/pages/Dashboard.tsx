@@ -10,10 +10,10 @@ export default function Dashboard() {
   const totalMentees = mentors.reduce((a, m) => a + m.menteeCount, 0);
 
   const stats = [
-    { label: '전체 멘토', value: mentors.length, icon: Users, color: 'from-indigo-500 to-purple-600', sub: '등록된 멘토 수' },
+    { label: '전체 코칭멘토', value: mentors.length, icon: Users, color: 'from-indigo-500 to-purple-600', sub: '등록된 코칭멘토 수' },
     { label: '전문 분야', value: categories.length, icon: CheckCircle, color: 'from-emerald-500 to-teal-600', sub: '커버하는 카테고리' },
-    { label: '평균 경력', value: `${avgExp}년`, icon: BarChart3, color: 'from-orange-500 to-red-500', sub: '멘토 평균 경력' },
-    { label: '누적 멘티', value: totalMentees, icon: Users, color: 'from-violet-500 to-pink-500', sub: '전체 멘토 합산' },
+    { label: '평균 경력', value: `${avgExp}년`, icon: BarChart3, color: 'from-orange-500 to-red-500', sub: '코칭멘토 평균 경력' },
+    { label: '누적 멘티', value: totalMentees, icon: Users, color: 'from-violet-500 to-pink-500', sub: '전체 코칭멘토 합산' },
   ];
 
   const catCounts = categories.map((cat) => ({
@@ -26,7 +26,7 @@ export default function Dashboard() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-white text-2xl font-bold">대시보드</h1>
-          <p className="text-gray-500 text-sm mt-1">멘토 플랫폼 현황</p>
+          <p className="text-gray-500 text-sm mt-1">코칭멘토 플랫폼 현황</p>
         </div>
         <div className="flex gap-3">
           <button
@@ -40,7 +40,7 @@ export default function Dashboard() {
             to="/admin/mentors/new"
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-500/20"
           >
-            + 멘토 추가
+            + 코칭멘토 추가
           </Link>
         </div>
       </div>
@@ -62,7 +62,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Category breakdown */}
         <div className="p-6 rounded-2xl bg-[#0e0e1a] border border-white/8">
-          <h2 className="text-white font-semibold mb-4">카테고리별 멘토 분포</h2>
+          <h2 className="text-white font-semibold mb-4">카테고리별 코칭멘토 분포</h2>
           <div className="space-y-3">
             {catCounts.map(({ cat, count }) => (
               <div key={cat}>
@@ -84,7 +84,7 @@ export default function Dashboard() {
         {/* Recent mentors */}
         <div className="p-6 rounded-2xl bg-[#0e0e1a] border border-white/8">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-white font-semibold">멘토 목록 (최근 5명)</h2>
+            <h2 className="text-white font-semibold">코칭멘토 목록 (최근 5명)</h2>
             <Link to="/admin/mentors" className="text-indigo-400 hover:text-indigo-300 text-xs">전체 보기 →</Link>
           </div>
           <div className="space-y-3">

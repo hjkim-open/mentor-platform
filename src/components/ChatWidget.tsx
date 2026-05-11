@@ -6,11 +6,11 @@ interface Message {
   content: string;
 }
 
-const SYSTEM_PROMPT = `당신은 MentorConnect의 AI 멘토 매칭 상담사입니다. 대한민국 스타트업 창업자들이 자신에게 맞는 멘토를 찾을 수 있도록 전문적으로 도와주세요.
+const SYSTEM_PROMPT = `당신은 MentorConnect의 AI 코칭멘토 매칭 상담사입니다. 대한민국 스타트업 창업자들이 자신에게 맞는 코칭멘토를 찾을 수 있도록 전문적으로 도와주세요.
 
 [플랫폼 정보]
-- 20명의 검증된 전문 멘토 (각 분야 대한민국 최고 전문가)
-- 멘토 분야: 투자/VC, B2B SaaS, 마케팅/그로스, CTO/기술, 글로벌 진출, 법무/세무, 조직문화/HR, 커머스, 핀테크 등
+- 20명의 검증된 전문 코칭멘토 (각 분야 대한민국 최고 전문가)
+- 코칭멘토 분야: 투자/VC, B2B SaaS, 마케팅/그로스, CTO/기술, 글로벌 진출, 법무/세무, 조직문화/HR, 커머스, 핀테크 등
 - 제공 서비스: 1:1 코칭, IR 피칭 덱 리뷰, 전략 자문, VC/파트너 네트워크 연결
 - 프로세스: 신청서 제출 → 48시간 내 매칭 → 첫 코칭 세션
 - 누적 멘티 500+, 평균 평점 4.9, 멘티 재등록률 94%
@@ -18,8 +18,8 @@ const SYSTEM_PROMPT = `당신은 MentorConnect의 AI 멘토 매칭 상담사입�
 [상담 방식]
 1. 창업 단계(아이디어/MVP/성장/스케일업)와 주요 고민을 파악하세요
 2. 필요한 도움의 종류(자금조달/기술/마케팅/팀빌딩/해외진출 등)를 확인하세요
-3. 적합한 멘토 카테고리와 상담 방향을 추천하세요
-4. 신청 유도 시 자연스럽게 페이지 상단의 '멘토 매칭 신청' 버튼을 안내하세요
+3. 적합한 코칭멘토 카테고리와 상담 방향을 추천하세요
+4. 신청 유도 시 자연스럽게 페이지 상단의 '코칭멘토 매칭 신청' 버튼을 안내하세요
 
 한국어로 친근하고 전문적으로 답변하세요. 답변은 2-4문장으로 간결하게 해주세요.`;
 
@@ -36,7 +36,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: '안녕하세요! MentorConnect AI 상담사입니다 👋\n어떤 분야의 멘토링이 필요하신가요? 창업 단계와 고민을 말씀해 주시면 딱 맞는 멘토를 찾아드릴게요.',
+      content: '안녕하세요! MentorConnect AI 상담사입니다 👋\n어떤 분야의 코칭멘토링이 필요하신가요? 창업 단계와 고민을 말씀해 주시면 딱 맞는 코칭멘토를 찾아드릴게요.',
     },
   ]);
   const [input, setInput] = useState('');
@@ -128,7 +128,7 @@ export default function ChatWidget() {
               <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-300 rounded-full border-2 border-green-500" />
             </div>
             <div>
-              <div className="text-white font-bold text-[13px] leading-tight">AI 멘토 상담</div>
+              <div className="text-white font-bold text-[13px] leading-tight">AI 코칭멘토 상담</div>
               <div className="text-green-100 text-[11px]">보통 즉시 응답</div>
             </div>
           </div>

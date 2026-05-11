@@ -13,7 +13,7 @@ export default function MentorList() {
   });
 
   const handleDelete = (id: number, name: string) => {
-    if (confirm(`"${name}" 멘토를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.`)) {
+    if (confirm(`"${name}" 코칭멘토를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.`)) {
       deleteMentor(id);
     }
   };
@@ -22,15 +22,15 @@ export default function MentorList() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-white text-2xl font-bold">멘토 관리</h1>
-          <p className="text-gray-500 text-sm mt-1">총 {mentors.length}명의 멘토</p>
+          <h1 className="text-white text-2xl font-bold">코칭멘토 관리</h1>
+          <p className="text-gray-500 text-sm mt-1">총 {mentors.length}명의 코칭멘토</p>
         </div>
         <Link
           to="/admin/mentors/new"
           className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-500/20"
         >
           <Plus size={16} />
-          멘토 추가
+          코칭멘토 추가
         </Link>
       </div>
 
@@ -52,7 +52,7 @@ export default function MentorList() {
           <table className="w-full">
             <thead>
               <tr className="border-b border-white/8">
-                <th className="text-left px-5 py-3.5 text-gray-500 text-xs font-semibold uppercase tracking-wider">멘토</th>
+                <th className="text-left px-5 py-3.5 text-gray-500 text-xs font-semibold uppercase tracking-wider">코칭멘토</th>
                 <th className="text-left px-5 py-3.5 text-gray-500 text-xs font-semibold uppercase tracking-wider hidden sm:table-cell">카테고리</th>
                 <th className="text-left px-5 py-3.5 text-gray-500 text-xs font-semibold uppercase tracking-wider hidden md:table-cell">경력</th>
                 <th className="text-left px-5 py-3.5 text-gray-500 text-xs font-semibold uppercase tracking-wider hidden lg:table-cell">멘티 수</th>

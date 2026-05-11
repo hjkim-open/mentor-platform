@@ -35,7 +35,7 @@ export default function Contact() {
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <div ref={ref} className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-5">
-            멘토 매칭 신청
+            코칭멘토 매칭 신청
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
             지금 바로 시작하세요

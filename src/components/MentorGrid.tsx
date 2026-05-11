@@ -36,7 +36,7 @@ export default function MentorGrid() {
           {/* Header */}
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold mb-5 tracking-wider uppercase">
-              20명의 검증된 멘토
+              20명의 검증된 코칭멘토
             </div>
             <h2 className="text-[40px] lg:text-[52px] font-extrabold tracking-[-0.04em] leading-[1.1] text-white mb-4">
               당신의 코칭멘토를 <span className="text-green-400">직접 선택</span>하세요
@@ -75,7 +75,7 @@ export default function MentorGrid() {
             ))}
           </div>
 
-          <p className="text-gray-700 text-sm mb-7">{filtered.length}명의 멘토</p>
+          <p className="text-gray-700 text-sm mb-7">{filtered.length}명의 코칭멘토</p>
 
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">

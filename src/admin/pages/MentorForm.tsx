@@ -149,8 +149,8 @@ export default function MentorForm() {
           <ArrowLeft size={18} />
         </button>
         <div>
-          <h1 className="text-white text-2xl font-bold">{isEdit ? '멘토 수정' : '새 멘토 추가'}</h1>
-          <p className="text-gray-500 text-sm mt-0.5">{isEdit ? '멘토 정보를 수정합니다.' : '새로운 멘토를 등록합니다.'}</p>
+          <h1 className="text-white text-2xl font-bold">{isEdit ? '코칭멘토 수정' : '새 코칭멘토 추가'}</h1>
+          <p className="text-gray-500 text-sm mt-0.5">{isEdit ? '코칭멘토 정보를 수정합니다.' : '새로운 코칭멘토를 등록합니다.'}</p>
         </div>
       </div>
 
@@ -256,7 +256,7 @@ export default function MentorForm() {
                   className={`${inputClass} resize-none ${errors.bio ? 'border-red-500/50' : ''}`}
                   value={form.bio}
                   onChange={(e) => set('bio', e.target.value)}
-                  placeholder="멘토님의 경력과 코칭 철학을 자유롭게 입력해주세요..."
+                  placeholder="코칭멘토님의 경력과 코칭 철학을 자유롭게 입력해주세요..."
                 />
                 {errors.bio && <p className={errClass}>{errors.bio}</p>}
                 <p className="text-gray-700 text-xs mt-1.5">{form.bio.length}자</p>
@@ -414,7 +414,7 @@ export default function MentorForm() {
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white font-semibold transition-all shadow-lg shadow-indigo-500/20"
               >
                 <Save size={16} />
-                {saving ? '저장 중...' : isEdit ? '수정 저장' : '멘토 등록'}
+                {saving ? '저장 중...' : isEdit ? '수정 저장' : '코칭멘토 등록'}
               </button>
               <button
                 type="button"

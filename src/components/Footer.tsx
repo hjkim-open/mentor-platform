@@ -11,7 +11,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
-            <a href="#mentors" className="hover:text-gray-400 transition-colors">멘토 소개</a>
+            <a href="#mentors" className="hover:text-gray-400 transition-colors">코칭멘토 소개</a>
             <a href="#program" className="hover:text-gray-400 transition-colors">프로그램</a>
             <a href="#faq" className="hover:text-gray-400 transition-colors">FAQ</a>
             <a href="#contact" className="hover:text-gray-400 transition-colors">문의하기</a>
@@ -23,7 +23,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-700">
           <p>© 2025 MentorConnect. All rights reserved.</p>
-          <p>대한민국 창업자를 위한 최고의 코칭 멘토 플랫폼</p>
+          <p>대한민국 창업자를 위한 최고의 코칭멘토 플랫폼</p>
         </div>
       </div>
     </footer>

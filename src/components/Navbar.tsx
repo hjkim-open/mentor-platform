@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: '홈', href: '#' },
-    { label: '멘토 소개', href: '#mentors' },
+    { label: '코칭멘토 소개', href: '#mentors' },
     { label: '프로그램', href: '#program' },
     { label: 'FAQ', href: '#faq' },
   ];
@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a href="#contact"
               className="px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold transition-all glow-green">
-              멘토 매칭 신청
+              코칭멘토 매칭 신청
             </a>
           </div>
 
@@ -68,7 +68,7 @@ export default function Navbar() {
             ))}
             <a href="#contact" onClick={() => setMenuOpen(false)}
               className="block w-full text-center px-5 py-3 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold transition-colors mt-2">
-              멘토 매칭 신청
+              코칭멘토 매칭 신청
             </a>
           </div>
         </div>
