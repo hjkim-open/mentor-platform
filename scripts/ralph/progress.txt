@@ -33,3 +33,14 @@ Started: 2026-05-11
   - When converting div to button for interactivity, use `text-left` to preserve text alignment
   - Import `type { Mentor }` separately from `{ mentors, categories }` when you need the type in a new file
 ---
+
+## 2026-05-11 - US-002
+- Implemented How It Works 섹션 between Hero and MentorGrid
+- Files changed:
+  - src/components/HowItWorks.tsx (new) - 3-step process section with icons, numbered badges, desktop arrow connectors
+  - src/App.tsx - imported and inserted HowItWorks between Hero and MentorGrid
+- **Learnings for future iterations:**
+  - Section bg-[#080810] alternates with bg-[#0a0a0f] for visual rhythm between sections
+  - Arrow connectors on desktop use `absolute right-0 translate-x-1/2` to center between adjacent step blocks
+  - lucide-react icons used: FileText (신청서), UserCheck (매칭), Video (세션), ArrowRight (connector + CTA)
+---
