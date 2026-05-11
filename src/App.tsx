@@ -8,6 +8,7 @@ import Stats from './components/Stats';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import MobileCtaBar from './components/MobileCtaBar';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <FAQ />
       <Contact />
       <Footer />
+      <MobileCtaBar />
     </div>
   );
 }
