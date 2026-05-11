@@ -4,9 +4,10 @@ import type { Mentor } from '../data/mentors';
 
 interface Props {
   mentor: Mentor;
+  onOpenModal: () => void;
 }
 
-export default function MentorCard({ mentor }: Props) {
+export default function MentorCard({ mentor, onOpenModal }: Props) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -17,13 +18,22 @@ export default function MentorCard({ mentor }: Props) {
       <div className="p-6 flex flex-col">
         {/* Header */}
         <div className="flex items-start gap-4 mb-5">
-          <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${mentor.avatarColor} flex items-center justify-center shadow-lg flex-shrink-0`}>
+          <button
+            onClick={onOpenModal}
+            className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${mentor.avatarColor} flex items-center justify-center shadow-lg flex-shrink-0 hover:scale-105 transition-transform duration-200`}
+            aria-label={`${mentor.name} 프로필 보기`}
+          >
             <span className="text-white font-bold text-lg">{mentor.initials}</span>
             <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green-500 border-2 border-[#0e0e1a]" />
-          </div>
+          </button>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between gap-2 mb-0.5">
-              <h3 className="text-white font-bold text-lg leading-tight">{mentor.name}</h3>
+              <button
+                onClick={onOpenModal}
+                className="text-white font-bold text-lg leading-tight hover:text-indigo-300 transition-colors text-left"
+              >
+                {mentor.name}
+              </button>
               <span className="flex-shrink-0 px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400 text-xs font-medium">
                 {mentor.category}
               </span>

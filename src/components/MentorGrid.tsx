@@ -1,11 +1,14 @@
 import { useState, useMemo } from 'react';
 import { Search } from 'lucide-react';
 import { mentors, categories } from '../data/mentors';
+import type { Mentor } from '../data/mentors';
 import MentorCard from './MentorCard';
+import MentorModal from './MentorModal';
 
 export default function MentorGrid() {
   const [activeCategory, setActiveCategory] = useState('전체');
   const [search, setSearch] = useState('');
+  const [selectedMentor, setSelectedMentor] = useState<Mentor | null>(null);
 
   const filtered = useMemo(() => {
     return mentors.filter((m) => {
@@ -22,6 +25,10 @@ export default function MentorGrid() {
   }, [activeCategory, search]);
 
   return (
+    <>
+    {selectedMentor && (
+      <MentorModal mentor={selectedMentor} onClose={() => setSelectedMentor(null)} />
+    )}
     <section id="mentors" className="py-24 bg-[#0a0a0f]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
@@ -79,7 +86,7 @@ export default function MentorGrid() {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filtered.map((mentor) => (
-              <MentorCard key={mentor.id} mentor={mentor} />
+              <MentorCard key={mentor.id} mentor={mentor} onOpenModal={() => setSelectedMentor(mentor)} />
             ))}
           </div>
         ) : (
@@ -95,5 +102,6 @@ export default function MentorGrid() {
         )}
       </div>
     </section>
+    </>
   );
 }
