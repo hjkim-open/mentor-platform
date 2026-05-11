@@ -90,3 +90,16 @@ Started: 2026-05-11
   - Initialize isVisible via useState lazy initializer to avoid flash for prefers-reduced-motion users
   - Pattern: className={isVisible ? 'animate-slide-up' : 'opacity-0'} for clean toggle
 ---
+
+## 2026-05-11 - US-006
+- Implemented 모바일 하단 고정 CTA 바 (mobile bottom sticky CTA bar)
+- Files changed:
+  - src/components/MobileCtaBar.tsx (new) - fixed bottom bar, md:hidden, scroll-triggered visibility, Contact IntersectionObserver hide
+  - src/App.tsx - imported and added MobileCtaBar after Footer
+- **Learnings for future iterations:**
+  - Use `useRef` for scroll/intersection state inside useEffect closures to avoid stale closure issues (refs are always current)
+  - `translate-y-full` / `translate-y-0` with `transition-transform duration-300` gives smooth slide-up-from-bottom animation
+  - `style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}` handles iOS notch/home-indicator safe area
+  - Hero section has `min-h-screen`; threshold of `window.innerHeight * 0.8` reliably detects "past hero"
+  - `md:hidden` keeps the bar desktop-invisible without JS
+---
